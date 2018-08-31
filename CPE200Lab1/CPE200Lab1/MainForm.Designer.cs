@@ -49,6 +49,8 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.lblDisplay = new System.Windows.Forms.Label();
+            this.sqrt = new System.Windows.Forms.Button();
+            this.oneoverx = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn7
@@ -284,11 +286,35 @@
             this.lblDisplay.Text = "0";
             this.lblDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Form1
+            // sqrt
+            // 
+            this.sqrt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sqrt.Location = new System.Drawing.Point(12, 12);
+            this.sqrt.Name = "sqrt";
+            this.sqrt.Size = new System.Drawing.Size(88, 64);
+            this.sqrt.TabIndex = 21;
+            this.sqrt.Text = "sqrt";
+            this.sqrt.UseVisualStyleBackColor = true;
+            this.sqrt.Click += new System.EventHandler(this.btnOperator_Click);
+            // 
+            // oneoverx
+            // 
+            this.oneoverx.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.oneoverx.Location = new System.Drawing.Point(12, 81);
+            this.oneoverx.Name = "oneoverx";
+            this.oneoverx.Size = new System.Drawing.Size(88, 64);
+            this.oneoverx.TabIndex = 22;
+            this.oneoverx.Text = "1/X";
+            this.oneoverx.UseVisualStyleBackColor = true;
+            this.oneoverx.Click += new System.EventHandler(this.btnOperator_Click);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 508);
+            this.Controls.Add(this.oneoverx);
+            this.Controls.Add(this.sqrt);
             this.Controls.Add(this.lblDisplay);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnClear);
@@ -310,7 +336,7 @@
             this.Controls.Add(this.btn9);
             this.Controls.Add(this.btn8);
             this.Controls.Add(this.btn7);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -340,6 +366,8 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblDisplay;
+        private System.Windows.Forms.Button sqrt;
+        private System.Windows.Forms.Button oneoverx;
     }
 }
 
