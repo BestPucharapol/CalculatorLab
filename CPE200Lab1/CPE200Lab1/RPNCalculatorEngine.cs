@@ -6,12 +6,47 @@ using System.Threading.Tasks;
 
 namespace CPE200Lab1
 {
-    public class RPNCalculatorEngine
+    public class RPNCalculatorEngine : CalculatorEngine
     {
         public string Process(string str)
         {
             // your code here
+            /*
+            string[] parts = str.Split(' ');
+            if (!(isNumber(parts[0]) && isNumber(parts[1]) && isOperator(parts[2])))
+            {
+                return "E";
+            }
+            else
+            {
+                return calculate(parts[2], parts[0], parts[1], 8);
+            }
             return "E";
+            */
+            Stack<String> operandStack = new Stack<String>();
+            string[] parts = str.Split(' ');
+
+            foreach (String s in parts)
+            {
+                if(isNumber(s))
+                {
+                    operandStack.Push(s);
+                }
+                else if(isOperator(s))
+                {
+                    String secondOperand = operandStack.Pop();
+                    String firstOperand = operandStack.Pop();
+                    operandStack.Push(calculate(s, firstOperand, secondOperand));
+                }
+            }
+            if (operandStack.Count == 0)
+            {
+                return "E";
+            }
+            else
+            {
+                return operandStack.Peek();
+            }
         }
     }
 }
