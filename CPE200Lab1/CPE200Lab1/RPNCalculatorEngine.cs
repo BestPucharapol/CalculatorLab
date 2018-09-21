@@ -34,22 +34,15 @@ namespace CPE200Lab1
                 }
                 else if(isOperator(s))
                 {
-                    String firstOperand;
-                    String secondOperand;
-                    if(operandStack.Count == 0)
+                    if(operandStack.Count < 2)
                     {
                         return "E";
                     }
                     else
                     {
+                        String firstOperand;
+                        String secondOperand;
                         secondOperand = operandStack.Pop();
-                    }
-                    if(operandStack.Count == 0)
-                    {
-                        return "E";
-                    }
-                    else
-                    {
                         firstOperand = operandStack.Pop();
                         operandStack.Push(calculate(s, firstOperand, secondOperand));
                     }
