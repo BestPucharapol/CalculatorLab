@@ -101,7 +101,7 @@ namespace CPE200Lab1
 
         private void btnEqual_Click(object sender, EventArgs e)
         {
-            string result = engine.Process(lblDisplay.Text);
+            string result = engine.calculate(lblDisplay.Text);
             if (result is "E")
             {
                 lblDisplay.Text = "Error";
@@ -168,7 +168,7 @@ namespace CPE200Lab1
         //assistive function for easier implementation
         private void btnOneOverX(object sender, EventArgs e)
         {
-            string result = engine.Process(lblDisplay.Text + " 1/x");
+            string result = engine.calculate(lblDisplay.Text + " 1/x");
             if (result is "E")
             {
                 lblDisplay.Text = "Error";
@@ -181,7 +181,7 @@ namespace CPE200Lab1
         //assistive function for easier implementation
         private void btnSquareRoot(object sender, EventArgs e)
         {
-            string result = engine.Process(lblDisplay.Text + " √");
+            string result = engine.calculate(lblDisplay.Text + " √");
             if (result is "E")
             {
                 lblDisplay.Text = "Error";

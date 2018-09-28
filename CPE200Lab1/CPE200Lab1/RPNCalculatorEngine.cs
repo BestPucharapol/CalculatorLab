@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CPE200Lab1
 {
-    public class RPNCalculatorEngine : CalculatorEngine
+    public class RPNCalculatorEngine : BasicCalculatorEngine
     {
-        public string Process(string str)
+        public string calculate(string str)
         {
             Stack<String> operandStack = new Stack<String>();
             string[] parts = str.Split(' ');
@@ -40,7 +40,7 @@ namespace CPE200Lab1
                 }
                 else if (s == "1/x" || s == "√")
                 {
-                    operandStack.Push(unaryCalculate(s, operandStack.Pop()));
+                    operandStack.Push(calculate(s, operandStack.Pop()));
                 }
             }
             if (operandStack.Count != 1)
