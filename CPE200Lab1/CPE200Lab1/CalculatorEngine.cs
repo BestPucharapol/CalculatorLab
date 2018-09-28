@@ -29,6 +29,13 @@ namespace CPE200Lab1
         public string Process(string str)
         {
             string[] parts = str.Split(' ');
+            if(parts.Length > 3)
+            {
+                if (parts[3] == "%")
+                {
+                    parts[2] = calculate(parts[3], parts[0], parts[2]);
+                }
+            }
             if(!(isNumber(parts[0]) && isOperator(parts[1]) && isNumber(parts[2])))
             {
                 return "E";
@@ -119,6 +126,8 @@ namespace CPE200Lab1
                     break;
                 case "%":
                     //your code here
+                    double resultPercentage = Convert.ToDouble(firstOperand) * (Convert.ToDouble(secondOperand) / 100);
+                    return resultPercentage.ToString("G");
                     break;
             }
             return "E";
