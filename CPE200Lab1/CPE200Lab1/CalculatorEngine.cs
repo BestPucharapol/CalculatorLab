@@ -8,12 +8,21 @@ namespace CPE200Lab1
 {
     public class CalculatorEngine
     {
+        /// <summary>
+        /// Check if input is a number
+        /// </summary>
+        /// <param name="str">Input</param>
+        /// <returns>True if is a number</returns>
         protected bool isNumber(string str)
         {
             double retNum;
             return Double.TryParse(str, out retNum);
         }
-
+        /// <summary>
+        /// Check if input is an operator 
+        /// </summary>
+        /// <param name="str">Input</param>
+        /// <returns>True if is an operator</returns>
         protected bool isOperator(string str)
         {
             switch(str) {
@@ -25,7 +34,11 @@ namespace CPE200Lab1
             }
             return false;
         }
-
+        /// <summary>
+        /// Processing input for calculation
+        /// </summary>
+        /// <param name="str">Text from display</param>
+        /// <returns></returns>
         public string Process(string str)
         {
             //Split input string to multiple parts by space
@@ -50,6 +63,13 @@ namespace CPE200Lab1
             }
             return parts[0];
         }
+        /// <summary>
+        /// Calculate unary operator
+        /// </summary>
+        /// <param name="operate"></param>
+        /// <param name="operand"></param>
+        /// <param name="maxOutputSize"></param>
+        /// <returns>Result in string</returns>
         public string unaryCalculate(string operate, string operand, int maxOutputSize = 8)
         {
             switch (operate)
@@ -97,7 +117,14 @@ namespace CPE200Lab1
             }
             return "E";
         }
-
+        /// <summary>
+        /// Calculate binary operator
+        /// </summary>
+        /// <param name="operate"></param>
+        /// <param name="firstOperand"></param>
+        /// <param name="secondOperand"></param>
+        /// <param name="maxOutputSize"></param>
+        /// <returns>Result in string</returns>
         public string calculate(string operate, string firstOperand, string secondOperand, int maxOutputSize = 8)
         {
             switch (operate)

@@ -8,6 +8,11 @@ namespace CPE200Lab1
 {
     public class RPNCalculatorEngine : CalculatorEngine
     {
+        /// <summary>
+        /// Process input for RPN calculation
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         public new string Process(string str)
         {
             Stack<string> rpnStack = new Stack<string>();
